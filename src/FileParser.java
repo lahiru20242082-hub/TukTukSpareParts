@@ -19,14 +19,14 @@ public class FileParser {
                 }
 
                 // This file is messy:, | ; mixed
-                // So make everything to comma
+                // So replace everything withh comma
                 line = line.replace("|", ",");
                 line = line.replace(";", ",");
 
-                // Now split by comma
+                // Now split by coma
                 String[] parts = line.split(",");
 
-                // Need at least 7 parts
+                // Need at least 7 parts to r
                 if (parts.length < 7) {
                     continue;
                 }
@@ -66,7 +66,6 @@ public class FileParser {
             br.close();
 
         } catch (Exception e) {
-            // File not found - return empty, Main will try next path
             // System.out.println("Cannot open: " + path);
         }
 

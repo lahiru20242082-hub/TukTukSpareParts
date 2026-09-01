@@ -1,4 +1,4 @@
-// Author: Lahiru - CM1601 - Part 2b - Search Fixed
+// Search Fixed
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,7 +42,7 @@ public class Main extends Application {
         });
 
         table = new TableView<>();
-        table.setItems(filtered); // FIXED: was dataList, now filtered
+        table.setItems(filtered); // FIXED:now filtered
 
         TableColumn<SparePart, String> codeCol = new TableColumn<>("Code");
         codeCol.setCellValueFactory(new PropertyValueFactory<>("code"));
