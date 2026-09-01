@@ -1,0 +1,6 @@
+### IntelliJ IDEA ###
+.idea/workspace.xml
+.idea/tasks.xml
+out/
+*.class
+*.iml
