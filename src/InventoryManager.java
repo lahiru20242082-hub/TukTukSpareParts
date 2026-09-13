@@ -10,4 +10,8 @@ public class InventoryManager {
     public void addPart(SparePart part) {
         parts.put(part.getId(), part);
     }
+
+    public SparePart getPart(String id) {
+        return parts.get(id);
+    }
 }
