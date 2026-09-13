@@ -24,8 +24,18 @@ public class Cart {
 
     public double getTotal() {
         double total = 0;
+        boolean hasEngine = false;
+        boolean hasElectrical = false;
+
         for (CartItem item : items) {
-            total += item.getSubTotal();
+            total += item.getDiscountedTotal();
+            String cat = item.getPart().getCategory();
+            if (cat.equals("Engine")) hasEngine = true;
+            if (cat.equals("Electrical")) hasElectrical = true;
+        }
+
+        if (hasEngine && hasElectrical) {
+            total = total * 0.90;
         }
         return total;
     }
