@@ -8,16 +8,17 @@ public class InventoryManager {
     }
 
     public void addPart(SparePart part) {
-        parts.put(part.getId(), part);
+        parts.put(part.getCode(), part);
     }
 
     public SparePart getPart(String id) {
         return parts.get(id);
     }
+
     public boolean isAvailable(String id, int qty) {
         if (parts.containsKey(id)) {
             SparePart p = parts.get(id);
-            if (p.getStock() >= qty) {
+            if (p.getQuantity() >= qty) {
                 return true;
             }
         }
@@ -27,7 +28,7 @@ public class InventoryManager {
     public void deductStock(String id, int qty) {
         if (isAvailable(id, qty)) {
             SparePart p = parts.get(id);
-            p.setStock(p.getStock() - qty);
+            p.setQuantity(p.getQuantity() - qty);
         }
     }
 }
