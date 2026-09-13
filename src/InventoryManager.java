@@ -23,4 +23,11 @@ public class InventoryManager {
         }
         return false;
     }
+
+    public void deductStock(String id, int qty) {
+        if (isAvailable(id, qty)) {
+            SparePart p = parts.get(id);
+            p.setStock(p.getStock() - qty);
+        }
+    }
 }
