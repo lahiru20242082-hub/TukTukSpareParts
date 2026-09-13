@@ -1,3 +1,5 @@
+// CartItem class - holds one spare part and its quantity in cart
+// If quantity >=3, gives 5% bulk discount
 public class CartItem {
     private SparePart part;
     private int quantity;
