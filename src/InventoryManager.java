@@ -14,4 +14,13 @@ public class InventoryManager {
     public SparePart getPart(String id) {
         return parts.get(id);
     }
+    public boolean isAvailable(String id, int qty) {
+        if (parts.containsKey(id)) {
+            SparePart p = parts.get(id);
+            if (p.getStock() >= qty) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
