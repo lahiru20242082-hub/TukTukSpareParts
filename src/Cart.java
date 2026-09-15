@@ -10,7 +10,7 @@ public class Cart {
 
     public void addItem(SparePart part, int quantity) {
         for (CartItem item : items) {
-            if (item.getPart().getId().equals(part.getId())) {
+            if (item.getPart().getCode().equals(part.getCode())) {
                 item.setQuantity(item.getQuantity() + quantity);
                 return;
             }
@@ -24,18 +24,8 @@ public class Cart {
 
     public double getTotal() {
         double total = 0;
-        boolean hasEngine = false;
-        boolean hasElectrical = false;
-
         for (CartItem item : items) {
-            total += item.getDiscountedTotal();
-            String cat = item.getPart().getCategory();
-            if (cat.equals("Engine")) hasEngine = true;
-            if (cat.equals("Electrical")) hasElectrical = true;
-        }
-
-        if (hasEngine && hasElectrical) {
-            total = total * 0.90;
+            total += item.getPart().getPrice() * item.getQuantity();
         }
         return total;
     }

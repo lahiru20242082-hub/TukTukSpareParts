@@ -89,7 +89,8 @@ public class DealerManager {
         return result;
     }
 
-// Uses bubble sort for location sorting - manual implementation
+    // Uses bubble sort for location sorting - manual implementation
+    public static void sortByLocation(List<Dealer> list) {
         for (int i = 0; i < list.size() - 1; i++) {
             for (int j = 0; j < list.size() - i - 1; j++) {
                 String loc1 = list.get(j).getLocation().toLowerCase();
